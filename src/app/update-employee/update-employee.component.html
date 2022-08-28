@@ -1,0 +1,62 @@
+<div class="md:w-1/3 mx-auto border rounded-md p-2 m-2.5 shadow-sm bg-gray-50 h-full">
+  <h3 class="text-sky-600"> Update Employee</h3>
+  <div appearance="legacy">
+    <form class="form formGroup border rounded-md  m-2.5 p-5 shadow bg-white shadow-gray-700" (ngSubmit)="onSubmit()">
+      <mat-form-field class="w-full rounded" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" name="employee-name" required placeholder="name" class="form-control"
+          [(ngModel)]="employee.name" #name="ngModel" />
+        <span matSuffix>
+          <mat-icon class="matSuffix" color="primary">verified_user</mat-icon>
+        </span>
+        <mat-error *ngIf="name.touched && !name.valid">Enter a valid name Full name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full rounded" appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput type="email" id="email" name="email" required placeholder="Ypur Email" class="form-control"
+          [(ngModel)]="employee.email" #email="ngModel" />
+        <span matSuffix>
+          <mat-icon class="matSuffix" color="primary">email</mat-icon>
+        </span>
+        <mat-error *ngIf="email.touched && !email.valid">Enter a valid email address!</mat-error>
+      </mat-form-field>
+
+      <div class="container flex">
+        <mat-form-field class="w-1/2 rounded" appearance="outline">
+          <mat-label>Job Title</mat-label>
+          <input matInput type="text" id="jobTitle" name="jobTitle" required placeholder="Your profession"
+            class="form-control" [(ngModel)]="employee.jobTitle" #jobTitle="ngModel" />
+          <span matSuffix>
+            <mat-icon class="matSuffix" color="primary">business</mat-icon>
+          </span>
+          <mat-error *ngIf="jobTitle.touched && !jobTitle.valid">Enter a valid jobTitle!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-1/2 rounded" appearance="outline">
+          <mat-label>Phone number</mat-label>
+          <input matInput type="tel" id="phone" name="phone" required placeholder="Your phone" class="form-control"
+            [(ngModel)]="employee.phone" #phone="ngModel" />
+          <span matSuffix>
+            <mat-icon class="matSuffix" color="primary">phone</mat-icon>
+          </span>
+          <mat-error *ngIf="phone.touched && !phone.valid">Enter a valid phone number</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-form-field class="w-full rounded" appearance="outline">
+        <mat-label>Image Url</mat-label>
+
+        <input matInput type="url" id="imageUrl" name="imageUrl" required placeholder="Your image'url"
+          class="form-control" [(ngModel)]="employee.imageUrl" #imageUrl="ngModel" />
+        <span matSuffix>
+          <mat-icon class="matSuffix" color="primary">image</mat-icon>
+        </span>
+        <mat-error *ngIf="imageUrl.touched && !imageUrl.valid">Enter a valid imageUrl! </mat-error>
+      </mat-form-field>
+
+      <button [disabled]="" type="submit" class="w-full bg-sky-500 text-center text-white rounded p-2.5">
+        Submit
+      </button>
+    </form>
+  </div>
+

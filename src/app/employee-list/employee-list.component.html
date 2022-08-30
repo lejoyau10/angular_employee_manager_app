@@ -1,0 +1,26 @@
+<div class="box-border rounded-xl shadow-sm shadow-black p-2.5 m-2.5 w-full bg-slate-50">
+  <h3 class="text-blue-700 text-center font-bold">Employee List </h3>
+<div class="bg-white m-1 p-1 rounded-md shadow-md">
+<div class="text-black w-full">
+  <mat-form-field appearance="outline" class="w-full" >
+  <mat-label>SEARCH</mat-label>
+  <input matInput type="search" (ngModelChange)=searchEmployees(key.value) #key="ngModel" ngModel name="search" id="search"
+    placeholder="Search">
+  </mat-form-field>
+</div>
+  <mat-list class="border rounded-md shadow-md m-4.5">
+    <mat-list-item *ngFor="let employee of employees">
+      <mat-icon mat-list-icon color="accent" (click)="employeeDetails(employee.id)">person_outline</mat-icon>
+      <div mat-line>{{employee.name}}</div>
+      <div mat-line> {{employee.jobTitle}} </div>
+      <button *ngIf="isAuthenticated()" mat-icon-button (click)="updateEmployee(employee.id)">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button *ngIf="isAuthenticated()" mat-icon-button (click)="deleteEmployee(employee.id)" class="m-2.5 p-1.5">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+    </mat-list>
+  </div>
+ </div>

@@ -1,0 +1,17 @@
+<div class="container rounded-xl shadow-md shadow-black md:w-1/2 p-1 m-auto my-2 bg-slate-200">
+<h3 class="text-center font-bold">Employees Details</h3>
+<mat-card class="border rounded-sm  p-3 w-full shadow-xl shadow-black" >
+  <mat-card-title><label><b> Name : </b></label> {{employee.name}}</mat-card-title>
+  <mat-card-subtitle>{{employee.jobTitle}}</mat-card-subtitle>
+  <img mat-card-md-image src="{{employee.imageUrl}}" alt="{{employee.name}}" class="rounder-sm text-center" >
+  <mat-card-content>
+    <Span>
+      <mat-icon matSuffix color="primary">email</mat-icon> {{employee.email}}
+    </Span>
+    <span>
+      <mat-icon matSuffix color="primary">phone_iphone</mat-icon> {{employee.phone}}
+    </span>
+  </mat-card-content>
+
+</mat-card>
+</div>

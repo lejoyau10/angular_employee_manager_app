@@ -1,0 +1,36 @@
+  <mat-toolbar color="primary" class="shadow-8">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngIf="!isAuthenticated()">
+  <button mat-menu-item routerLink="login"><mat-icon color="accent" matSuffix>person</mat-icon>Log in</button>
+  <button mat-menu-item routerLink="register"><mat-icon color="accent" matSuffix>person_add</mat-icon>Register</button>
+</ng-container>
+<ng-container *ngIf="isAuthenticated()">
+  <button mat-menu-item (click)="logout()"><mat-icon color="warn" matSuffix>power_settings_new</mat-icon>Logout</button>
+</ng-container>
+
+</mat-menu>
+    <span><a routerLink="employees" routerLinkActive="active" class="h-10.5 w-auto">{{ title | titlecase }}</a></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerLink="create-employee" routerLinkActive="active" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </mat-toolbar>
+<main>
+  <!-- List of employee -->
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- list item end -->
+</main>
+<!-- footer -->
+  <footer class=" bg-blue-800 text-white w-full h-20 p-2.5">
+    <div class="text-center">
+      <h3 class="font-blod">Copyright</h3>
+      <p> &copy; All right reservied by lejoyau10 2022</p>
+    </div>
+  </footer>
+
